@@ -29,6 +29,9 @@ def add_me(number_1: int, number_2: int):
     sum = number_1 + number_2
     return {"sum": sum}
 
+@app.get("/lab6")
+def lab6():
+    return {"message:" "Here is a string!"}
 # Let's develop a new one:
 
 
