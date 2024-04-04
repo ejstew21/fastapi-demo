@@ -3,10 +3,18 @@
 from fastapi import FastAPI
 from typing import Optional
 from pydantic import BaseModel
+import os
+import MySQLdb
+from fastapi.staticfiles import StaticFiles
 # import boto3
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
+DBHOST = os.environ.get('DBHOST')
+DBUSER = os.environ.get('DBUSER')
+DBPASS = os.environ.get('DBPASS')
+DB = "ryb8jt"  # replace with your UVA computing ID / database name
 # The URL for this API has a /docs endpoint that lets you see and test
 # your various endpoints/methods.
 
